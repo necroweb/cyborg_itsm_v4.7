@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  <!--NOVA TEMPLATE bootstrap-->
+  <title>Inicio de sesion</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="imagenes/logg.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Nova
+  * Template URL: https://bootstrapmade.com/nova-bootstrap-business-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <div class="logo" id="">
+        <img src="assets/img/logo.png" class="logo">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+      </div>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#supModal"> <i class="bi bi-person-plus-fill" style="font-size: 1.5rem; color: white;"></i></a></li>
+          
+          <li><a href="#hero" class="active">inicio<br></a></li>
+          <li><a href="#why-us">Introducion</a></li>
+          <li><a href="#recent-posts">Servicios</a></li>
+          
+            
+          </li>
+          <li><a href="#footer">Contactos</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i> 
+      
+      </nav>
+
+    </div>
+
+  
+  </header>
+
+  <!--MODAL FORM REGISTRAR SUPERVISOR -->
+<div class="modal" tabindex="-1" id="supModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg"> 
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Registra tu ingreso y salida aqui</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+      </div>
+      <div class="modal-body">
+      <div id="modalContent">
+        <form id="registroForm" action="controller/turno.php" method="post">
+          Número de documento:
+        <input type="text" class="form-control" name="DOC_REG" required>
+          <br>
+              <select class="btn btn-info b" name="accion">
+                  <option value="ingreso">Ingreso</option>
+                  <option value="salida">Salida</option>
+              </select>
+              &nbsp;
+        <input type="submit" class="btn btn-dark" value="Registrar">
+    </form>
+    <div id="resultado" style="display: none; margin-top: 15px;"></div>
+
+
+    
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+
+      <div class="container ">
+        <div class="row">
+          <div class="col-xl-4">
+           
+              <h1 data-aos="fade-up">¿Quienes somos?</h1>
+              <blockquote data-aos="fade-up" data-aos-delay="100">
+                <p>Somos una empresa especializada en el diseño y desarrollo ITSM a tu medida, 
+              proporcionando soluciones de software innovadoras adaptadas a las necesidades
+              de diversas empresas. Nuestro enfoque combina creatividad y tecnología para
+              ofrecer plataformas digitales eficientes, optimizadas y alineadas con los 
+              objetivos de cada negocio.  </p>
+              </blockquote>
+          </div>  
+        
+           <div class="container col-xl-4 me-5 ">
+             <form action="vista/login.php" method="POST">
+               <fieldset class="text-center mb-5"> <legend>Inicio de Sesion</legend><hr> </fieldset>
+                  <div class="mb-2">
+                    <select class="form-select" aria-label="Default select example" name="rol">
+                    <option selected>--Seleccion--</option>
+                    <option value="operario">Operario</option>
+                    <option value="supervisor">Supervisor</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Usuario:</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="use" aria-describedby="emailHelp">
+                    
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="" name="pas">
+                  </div>
+                 
+                  <div class="mb-5 p-4 container-fluid d-flex col-xl-8 justify-content-center mt-4">
+                    <button type="submit" class="btn btn-md  btn-info col-xl-8" name="ing">Login</button>
+                    <a href=""></a>
+                  </div>  
+                </form>
+          </div>
+             
+             
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us section">
+
+      <div class="container">
+
+        <div class="row g-0">
+
+          <div class="col-xl-6 img-bg" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/why-us-bg.jpg" alt="">
+          </div>
+
+          <div class="col-xl-6 slides position-relative" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "centeredSlides": true,
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  },
+                  "navigation": {
+                    "nextEl": ".swiper-button-next",
+                    "prevEl": ".swiper-button-prev"
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <div class="item">
+                    <h3 class="mb-3">Introducion</h3>
+                    <h4 class="mb-3">- "Gestión moderna para organizaciones que priorizan a su gente."</h4>
+                    <p>En un mundo laboral donde la eficiencia, la comunicación y la transparencia son esenciales, nace nuestra solución digital: un sistema diseñado
+                       para optimizar la interacción entre operarios y sus superiores. Este proyecto tiene como objetivo transformar la experiencia diaria de los trabajadores a través de una plataforma intuitiva 
+                      que centraliza procesos clave como el control de llegadas, la gestión de novedades, solicitudes internas y temas relacionados con el salario..</p>
+                  </div>
+                </div><!-- End slide item -->
+
+                <div class="swiper-slide">
+                  <div class="item">
+                    <h3 class="mb-3">Misión</h3>
+                    <h4 class="mb-3">Conectando operarios, fortaleciendo equipos, impulsando el futuro"</h4>
+                    <p>“Nuestro proyecto tiene como misión mejorar el soporte y la comunicación entre los operarios y sus superiores, mediante un aplicativo que centraliza la gestión de llegadas, solicitudes, novedades y temas relacionados con el sueldo. Con esto buscamos promover un entorno laboral más organizado, transparente y armonioso.”</p>
+                  </div>
+                </div><!-- End slide item -->
+
+                <div class="swiper-slide">
+                  <div class="item">
+                    <h3 class="mb-3">Visión</h3>
+                    <h4 class="mb-3">Tecnología para una labor más humana, justa y eficiente.</h4>
+                    <p>"Ser la solución digital líder que revoluciona la experiencia laboral de los operarios, fomentando un entorno de trabajo más conectado, justo y eficiente. Buscamos transformar la interacción entre operarios y supervisores mediante tecnología intuitiva, impulsando la equidad, la productividad y la satisfacción laboral en cada nivel de la organización."</p>
+                  </div>
+                </div><!-- End slide item -->
+
+                <div class="swiper-slide">
+                  <div class="item">
+                    <h3 class="mb-3"></h3>
+                    <h4 class="mb-3">Tempora quos est ut quia adipisci ut voluptas. Deleniti laborum soluta nihil est. Eum similique neque autem ut.</h4>
+                    <p>Ut rerum et autem vel. Et rerum molestiae aut sit vel incidunt sit at voluptatem. Saepe dolorem et sed voluptate impedit. Ad et qui sint at qui animi animi rerum.</p>
+                  </div>
+                </div><!-- End slide item -->
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Why Us Section -->
+
+    <!-- Services Section -->
+    
+    </section><!-- /Services Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+
+      <img src="assets/img/fondo_Sena1.jpg" alt="">
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>Call To Action</h3>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <a class="cta-btn" href="#">Call To Action</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+    
+    <!-- Recent Posts Section -->
+    <section id="recent-posts" class="recent-posts section">
+
+      <!-- equipo de trabajo  -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Nuestro equipo de trabajo</h2>
+
+      </div><!-- End Section Title -->
+<div class="container">
+    <div class="row justify-content-center gy-5"> <!-- Asegura que las cartas estén centradas -->
+        
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="post-box">
+                <div class="post-img"><img src="assets/img/blog/anderson.jpg" class="img-fluid" alt=""></div>
+                <div class="meta">
+                    <span class="post-date">Aprendiz Sena</span>
+                    <span class="post-author"> / Anderson Esneyder Albutria Martinez</span>
+                </div>
+                <h3 class="post-title"> "Más que código, creamos impacto."</h3>
+                <p>Cada línea de código que escribo busca generar impacto real en los procesos y en las personas.</p>
+                
+            </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="post-box">
+                <div class="post-img"><img src="assets/img/blog/camilo.jpg" class="img-fluid" alt=""></div>
+                <div class="meta">
+                    <span class="post-date">Aprendiz sena</span>
+                    <span class="post-author"> / Stiven Camilo Cadena Fajardo</span>
+                </div>
+                <h3 class="post-title">"Piensa. Diseña. Desarrolla."</h3>
+                <p>Primero entiendo el problema, luego imagino la mejor solución y finalmente la convierto en software funcional. Cada paso importa para construir con propósito.</p>
+                
+            </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="post-box">
+                <div class="post-img"><img src="assets/img/blog/julian.jpg" class="img-fluid" alt=""></div>
+                <div class="meta">
+                    <span class="post-date">Aprendiz Sena</span>
+                    <span class="post-author"> /Julian valencia </span>
+                </div>
+                <h3 class="post-title"> "El detalle es nuestro lenguaje."
+</h3>
+                <p>cada interfaz y cada decisión técnica refleja nuestro compromiso con la precisión. Porque en el detalle está la diferencia entre lo funcional y lo excepcional.</p>
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">CYBORG </span>
+            </a>
+            <H5>"Tecnología que se adapta, resultados que impactan."</H5>
+            <div class="social-links d-flex mt-4">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4></h4>
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Otros Servicios</h4>
+            <ul>
+              <li><a href="#">Diseño web</a></li>
+              <li><a href="#">Automatización de Procesos y RPA</a></li>
+              <li><a href="#">Gestión Documental y Firma Electrónica</a></li>
+              <li><a href="#">Pruebas de Software y QA </a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contactenos</h4>
+            <p>3138300492</p>
+            <p>Cundinamarca, soacha</p>
+            <p>Colombia</p>
+            <p class="mt-4"><strong>Telefono:</strong> <span>+57 3138300492</span></p>
+            <p><strong>Email:</strong> <span>cyborgitsm@gmail.com</span></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center">
+      <p>© <span>Analisis y desarrollo de software</span> <strong class="px-1 sitename">ADSO</strong> <span>Derechos <Ri:a>Reservados</Ri:a></span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Diseñado por CYBORG ITSM
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+
+</body>
+<!--script para enviar los datos de registros al modal--><script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('registroForm');
+  const resultado = document.getElementById('resultado');
+  const modal = document.getElementById('supModal');
+
+  // Manejo del envío del formulario
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.text())
+    .then(data => {
+      resultado.innerHTML = data;
+      resultado.style.display = 'block';
+      form.style.display = 'none';
+    })
+    .catch(err => {
+      resultado.innerHTML = `<div class="alert alert-danger">Error: ${err}</div>`;
+      resultado.style.display = 'block';
+      form.style.display = 'none';
+    });
+  });
+
+  // Restaurar el formulario cuando se cierre el modal
+  modal.addEventListener('hidden.bs.modal', function () {
+    form.reset();
+    form.style.display = 'block';
+    resultado.innerHTML = '';
+    resultado.style.display = 'none';
+  });
+});
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>>
+
+</html>
