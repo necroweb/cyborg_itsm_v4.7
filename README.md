@@ -22,3 +22,9 @@ Construido con **PHP nativo**, **MySQL** y **Bootstrap**.
 👉 Te recomiendo poner **README.md + LICENSE (MIT)** aunque sea un proyecto de práctica, porque así tus repos se ven más organizados y profesionales.  
 
 ¿Quieres que te arme un **README.md + LICENSE listos para copiar y pegar** en tu repo actual?
+
+## 📄 Licencia
+Este proyecto utiliza la plantilla [Creative Tim](https://www.creative-tim.com/) 
+bajo licencia MIT.  
+Las modificaciones y desarrollos adicionales realizados por mí están disponibles bajo 
+la licencia [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
